@@ -1,0 +1,8 @@
+= Security Policy
+WHAM takes security seriously. If you discover a vulnerability, please report it responsibly.
+
+== Reporting Vulnerabilities
+- Email: security@wham.ai
+- Include detailed steps to reproduce the vulnerability.
+
+Thank you for helping us maintain a secure project!

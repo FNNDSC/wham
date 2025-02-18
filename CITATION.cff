@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: "If you use WHAM, please cite it as below."
+authors:
+  - family-names: "Pienaar"
+    given-names: "Rudolph"
+title: "WHAM: Web-based Holistic AI Manager"
+version: "0.1.0"
+date-released: "2024-12-05"

@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wham"
+version = "0.1.0"
+description = "Web-based Holistic AI Manager"
+authors = [
+    {name = "Rudolph Pienaar", email = "rudolph.pienaar@childrens.harvard.edu"}
+]
+license = {text = "MIT"}
+readme = {file = "README.adoc", content-type = "text/x-asciidoc"}
+dynamic = ["dependencies"]
+
+[tool.setuptools.dynamic]
+dependencies = {file = "requirements.txt"}
+
+[project.urls]
+homepage = "https://github.com/FNNDSC/wham"
+repository = "https://github.com/FNNDSC/wham"

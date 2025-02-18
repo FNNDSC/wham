@@ -1,0 +1,12 @@
+= Code of Conduct
+All participants in the WHAM project are expected to adhere to this Code of Conduct.
+
+== Guidelines
+- Be respectful and considerate.
+- Avoid offensive language or behavior.
+- Welcome contributions from everyone, regardless of background or experience.
+
+== Enforcement
+Violations of this Code of Conduct may result in removal from the project.
+
+Contact: community@wham.ai

@@ -1,0 +1,11 @@
+= OpenAPI Documentation
+This document contains detailed OpenAPI specifications for the WHAM application.
+
+== API Endpoints
+- `/`: Root endpoint.
+- `/users`: Manage user operations.
+- `/tasks`: Manage task operations.
+- `/ai`: Manage AI models.
+
+== Authentication
+All endpoints require valid authentication tokens.

@@ -1,0 +1,15 @@
+= Contributing to WHAM
+Thank you for your interest in contributing to WHAM! Contributions are welcome and encouraged.
+
+== How to Contribute
+1. Fork the repository.
+2. Create a feature branch: `git checkout -b feature-name`.
+3. Commit your changes: `git commit -m "Description of your changes"`.
+4. Push your branch: `git push origin feature-name`.
+5. Open a Pull Request.
+
+== Issues
+If you find a bug or have a feature request, please open an issue in the repository.
+
+== Contact
+For major contributions, please reach out to community@wham.ai.

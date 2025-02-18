@@ -1,0 +1,62 @@
+= WHAM Service Intents Overview
+
+WHAM (**W**eb-based **H**olistic **A**I **M**anager) is a FastAPI service that provides a set of specific API end points that enable a caller to satisfy _intents_. An _intent_ is a single need that nevertheless might require a set of coordinated sub-steps to execute. For instance, _building a house_ is a single intent that requires a complex set of interrelated or dependent sub-steps to complete. Learning this set of sub-steps and executing them in a coordinated fashion is a considerably more complex problem to automate with generative AI than simply associating singular API endpoints with specific _intents_. This is especially true if the steps underpinning an _intent_ are rather mechanical -- there is little need thus to learn these steps, rather it would be more efficient to determine what _intent_ is required and then simply execute these steps in a procedural fashion.
+
+WHAM supports a set of _intents_ within the context of ChRIS and exposes simple API endpoints, one per intent. A companion service called RAPP (not discussed here) maps human prompts to these exposed endpoints and calls them.
+
+The context of WHAM is of course CUBE/ChRIS and the WHAM _intents_ are meaningful in that context. Of course, the space of possible behaviors in ChRIS is large. WHAM focuses only on a small exemplar set of _intents_ within this large behavioral space.
+
+== Spaces of _intents_
+
+From the perspective of an end user interacting with a general computing system, three core concerns are important:
+
+* **input**
++
+The space of input data -- within this space are queries (_"What data is available?"_) and actions (_"Get <data>_").
+
+* **analysis**
++
+The space of analysis on input data -- within this space similarly are queries (_"What analyses are available?"_) and actions (_"Perform <analysis> (on <data>)_"). Here the context is more nuanced since a typical _action_ is contextual to a given selection of input data.
+
+* **output**
++
+The space of results of analyses, or outputs -- within this space again are queries (_"What were the results of <analysis>?"_) and actions (_"Report/present the results of <analysis>"_). Here, the context consists of a specific analysis.
+
+Each of these categories consists of contextual _queries_ and _actions_, with category specific qualifiers for each. For example, an **output** report is only meaningful to some _specific_ analysis that was performed. Similarly an **analysis** can only performed on some _specific_ **input** -- indeed the selection of **input** itself might constrain the space of possibles analyses. These contextual cues are also part of a given API call.
+
+== Typical _intents_ that WHAM addresses
+
+The following is a list of the type of queries or intents that WHAM facilitates:
+
+
+=== Input
+
+The input space for WHAM consists of two domains: an external database of images (called a PACS), and the internal database of ChRIS images.
+
+==== Queries
+
+* What data for _<PatientDescriptor>_ is available (in the PACS)?
+
+* What data for _<PatientDescriptor>_ is available (in ChRIS)?
+
+==== Actions
+
+* Pull _<DataDescriptor>_ for _<PatientDescriptor>_specific_
+=== Query / informational
+
+
+* Has patient _<PatientDescriptor>_ been analyzed?
+
+* What analyses have been performed for patient _<PatientDescriptor>_?
+
+* What are the results of _<AnalysisDescriptor>_ on _<PatientDescriptor>_?
+
+* What _<PatientDataDescriptor>_ is available in _<DataSystem>_ for _<PatientDataDescriptor>_?
+
+=== Activity / intentional
+
+* Pull _<PatientDataDescriptor>_ from _<DataSystem>_ for _<PatientDataDescriptor>_
+
+* Run _<AnalysisDescriptor>_ on _<PatientDataDescriptor>_ for _<PatientDescriptor>_
+
+

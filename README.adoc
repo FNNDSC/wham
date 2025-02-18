@@ -1,0 +1,23 @@
+= WHAM: Web-based Holistic AI Manager
+
+WHAM is a FastAPI-based web application for managing AI models, tasks, and users. This project includes a MongoDB backend, RESTful APIs, and service layers for scalable deployments.
+
+== Features
+- User Management
+- Task and AI Model Management
+- RESTful APIs with versioning
+- MongoDB integration using pfmongo
+- Dockerized deployment
+
+== Installation and Usage
+Refer to the link below for detailed setup and usage instructions:
+link:HOWTORUN.adoc[How to Run the WHAM Server Locally]
+
+== Contributing
+We welcome contributions! Please see link:CONTRIBUTING.adoc[CONTRIBUTING.adoc] for guidelines.
+
+== License
+This project is licensed under the MIT License.
+
+== Acknowledgements
+This project is developed and maintained by Rudolph Pienaar and contributors.
