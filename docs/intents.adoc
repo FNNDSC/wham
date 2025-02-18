@@ -26,37 +26,30 @@ Each of these categories consists of contextual _queries_ and _actions_, with ca
 
 == Typical _intents_ that WHAM addresses
 
-The following is a list of the type of queries or intents that WHAM facilitates:
+The following is a list of the type of queries or intents that WHAM facilitates for each domain category:
 
 
 === Input
 
-The input space for WHAM consists of two domains: an external database of images (called a PACS), and the internal database of ChRIS images.
+==== Domain
+
+The _Input_ domain space is the space of data that is processed for a certain _intent_. In WHAM this consists of two domains: an external database of medical images (called a PACS), and the internal database of ChRIS images.
 
 ==== Queries
 
-* What data for _<PatientDescriptor>_ is available (in the PACS)?
+* What studies for `<PatientDescriptor>` is available (in the PACS or in ChRIS)?
+- `/api/v1/[PACS|ChRIS]/query/[PatientName|MRN|AccessionNumber]/{query_qualifier}`
+- _What is available for Jane Doe?_
+- `/api/v1/PACS/PatientName/Doe^Jane/`
+- _What imaging scans for John Smith were performed last week?_
+- `/api/v1/PACS/PatientName/{PatientName}[/?[date={ISOdate}][&Station={StationID}]`
+- `/api/v1/PACS/MRN/{PatientID}`
+- `/api/v1/PACS/AccessionNumber/{PatientName}`
 
-* What data for _<PatientDescriptor>_ is available (in ChRIS)?
+* Has study `<StudyDescriptor>` for `<PatientDescriptor>` been pulled (to ChRIS)?
 
 ==== Actions
 
-* Pull _<DataDescriptor>_ for _<PatientDescriptor>_specific_
-=== Query / informational
-
-
-* Has patient _<PatientDescriptor>_ been analyzed?
-
-* What analyses have been performed for patient _<PatientDescriptor>_?
-
-* What are the results of _<AnalysisDescriptor>_ on _<PatientDescriptor>_?
-
-* What _<PatientDataDescriptor>_ is available in _<DataSystem>_ for _<PatientDataDescriptor>_?
-
-=== Activity / intentional
-
-* Pull _<PatientDataDescriptor>_ from _<DataSystem>_ for _<PatientDataDescriptor>_
-
-* Run _<AnalysisDescriptor>_ on _<PatientDataDescriptor>_ for _<PatientDescriptor>_
-
+* Pull `<StudyDescriptor>` for `<PatientDescriptor>`
+- `/api/v1/PACS/pull/<PatientDescriptor>/?<StudyDescriptor>`
 
