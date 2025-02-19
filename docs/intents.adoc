@@ -40,11 +40,11 @@ The _Input_ domain space is the space of data that is processed for a certain _i
 * What studies for `<PatientDescriptor>` is available (in the PACS or in ChRIS)?
 - `/api/v1/[PACS|ChRIS]/query/[PatientName|MRN|AccessionNumber]/{query_qualifier}`
 - _What is available for Jane Doe?_
-- `/api/v1/PACS/PatientName/Doe^Jane/`
+- `/api/v1/PACS/query/PatientName/Doe^Jane/`
 - _What imaging scans for John Smith were performed last week?_
-- `/api/v1/PACS/PatientName/{PatientName}[/?[date={ISOdate}][&Station={StationID}]`
-- `/api/v1/PACS/MRN/{PatientID}`
-- `/api/v1/PACS/AccessionNumber/{PatientName}`
+- `/api/v1/PACS/query/PatientName/{PatientName}[/?[date={ISOdate}][&Station={StationID}]`
+- `/api/v1/PACS/query/MRN/{PatientID}`
+- `/api/v1/PACS/query/AccessionNumber/{PatientName}`
 
 * Has study `<StudyDescriptor>` for `<PatientDescriptor>` been pulled (to ChRIS)?
 
